@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import { Clock, BarChart, Building } from "lucide-react";
 
 const difficultyColor = {
@@ -11,7 +11,12 @@ const difficultyColor = {
   Hard: "bg-red-100 text-red-800",
 };
 
-const ChallengeCard = ({ id, title, description, company, duration, difficulty, skills }) => {
+const ChallengeCard = ({ id,title, description, company, duration, difficulty, skills ,challenge   }) => {
+  const navigate = useNavigate();
+
+  const handleStartChallenge = () => {
+    navigate(`/challenges/${id}`);
+  };
   return (
     <Card className="challenge-card overflow-hidden hover:shadow-lg">
       <CardHeader className="pb-2">
@@ -42,8 +47,8 @@ const ChallengeCard = ({ id, title, description, company, duration, difficulty, 
         </div>
       </CardContent>
       <CardFooter className="pt-2">
-        <Button className="w-full bg-brand-600 hover:bg-brand-500" asChild>
-          <Link to={`/challenges/${id}`}>Start Challenge</Link>
+        <Button onClick={handleStartChallenge} className="w-full bg-brand-600 hover:bg-brand-500" >
+          Start Challenge
         </Button>
       </CardFooter>
     </Card>

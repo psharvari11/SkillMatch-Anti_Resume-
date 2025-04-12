@@ -14,6 +14,8 @@ import Signup from "./pages/Signup";
 import { EmployerContext } from "./context/EmployerContext";
 import { UserContext } from "./context/UserContext";
 import { AppContext } from "./context/AppContext";
+import ChallengeDetail from "./pages/Candidate/ChallengeDetail";
+import CandidateDashboard from "./pages/Candidate/CandidateDashboard";
 
 const queryClient = new QueryClient();
 
@@ -44,8 +46,10 @@ const App = () => {
                     <Route path="/for-employers" element={<ForEmployers />} />
                   ) : (
                     <>
-                      <Route path="/for-candidates" element={<ForCandidates />} />
+                      <Route path="/for-candidate" element={<ForCandidates />} />
                       <Route path="/challenges" element={<Challenges />} />
+                      <Route path="/challenges/:id" element={<ChallengeDetail />} />
+                      <Route path="/candidate-dashboard" element={<CandidateDashboard/>} />
                     </>
                   )}
                 </>

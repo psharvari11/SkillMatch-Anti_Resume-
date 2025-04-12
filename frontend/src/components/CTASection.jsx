@@ -17,16 +17,20 @@ const CTASection = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 min-[400px]:gap-6">
-            <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100" asChild>
+          <div className="h-9">
+            <Button size="sm" className="bg-white text-brand-600 hover:bg-gray-100" asChild>
               <Link to="/for-candidates">
                 I'm a Candidate <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-white border-white hover:bg-brand-700" asChild>
-              <Link to="/for-employers">
-                I'm an Employer <ArrowRight className="ml-2 h-4 w-4" />
+            </div>
+            <div className="h-9">
+            <Button size="sm" className="bg-white text-brand-600 hover:bg-gray-100" asChild>
+              <Link to="/for-candidates">
+              I'm an Employer <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
+            </div>
           </div>
         </div>
       </div>

@@ -15,11 +15,11 @@ const Hero = () => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             SkillMatch connects candidates and companies through real skills demonstration, not keywords on resumes.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <Button size="lg" className="bg-brand-600 hover:bg-brand-500" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 h-9">
+            <Button size="sm" className="bg-brand-600 hover:bg-brand-500" asChild>
               <Link to="/for-candidates">Find Jobs <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="sm" variant="outline" className="hover:bg-brand-500 " asChild>
               <Link to="/for-employers">Post Jobs</Link>
             </Button>
           </div>

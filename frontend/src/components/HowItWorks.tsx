@@ -110,7 +110,7 @@ const HowItWorks = () => {
               ))}
             </div>
             <div className="mt-8">
-              <Button className="bg-blue-600 hover:bg-blue-500" asChild>
+              <Button className="bg-brand-600 hover:bg-brand-500" asChild>
                 <Link to="/for-employers">Post a Job</Link>
               </Button>
             </div>

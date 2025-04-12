@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const isAuthenticated = !!(eToken || token || appToken);
   const isEmployer = userType === "employer";
-  const dashboardPath = isEmployer ? "/for-employers" : "/for-candidate";
+ 
 
   const handleLogout = () => {
     // Clear localStorage tokens
@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="h-8 w-8 rounded-md bg-blue-600 text-white flex items-center justify-center font-bold text-lg mr-2">
+            <div className="h-8 w-8 rounded-md bg-brand-600 text-white flex items-center justify-center font-bold text-lg mr-2">
               S
             </div>
             <span className="text-xl font-bold text-gray-900">SkillMatch</span>
@@ -82,12 +82,7 @@ const Navbar = () => {
                 {!isEmployer && renderNavLink("/for-candidate", "For Candidates")}
                 {isEmployer && renderNavLink("/for-employers", "For Employers")}
                 {!isEmployer && renderNavLink("/challenges", "Challenges")}
-                <Link
-                  to={dashboardPath}
-                  className="text-sm font-medium text-blue-600 hover:underline"
-                >
-                  Dashboard
-                </Link>
+                
                 <Button
                   variant="outline"
                   size="sm"
@@ -99,12 +94,16 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Button variant="outline" size="sm" asChild>
+              <div className="h-9">
+                <Button variant="outline" size="sm" className=" hover:bg-brand-500 " asChild>
                   <Link to="/login">Log in</Link>
                 </Button>
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-500" asChild>
+                </div>
+                <div className="h-9">
+                <Button size="sm" className="bg-brand-600  hover:bg-brand-500 " asChild>
                   <Link to="/signup">Sign up</Link>
                 </Button>
+                </div>
               </>
             )}
           </div>
@@ -126,13 +125,8 @@ const Navbar = () => {
               {!isEmployer && renderMobileLink("/for-candidate", "For Candidates")}
               {isEmployer && renderMobileLink("/for-employers", "For Employers")}
               {!isEmployer && renderMobileLink("/challenges", "Challenges")}
-              <Link
-                to={dashboardPath}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block px-4 py-2 text-base font-medium text-blue-600 hover:bg-gray-100"
-              >
-                Dashboard
-              </Link>
+              
+    
               <button
                 onClick={handleLogout}
                 className="block w-full text-left px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
